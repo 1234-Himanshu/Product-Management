@@ -1,6 +1,5 @@
 package com.example.productmanagement.service;
 
-
 import com.example.productmanagement.model.Product;
 import com.example.productmanagement.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +33,10 @@ public class ProductService {
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
+
+    // New method to search products by name
+    public List<Product> searchProductsByName(String name) {
+        return productRepository.findByName(name);
+    }
+
 }
